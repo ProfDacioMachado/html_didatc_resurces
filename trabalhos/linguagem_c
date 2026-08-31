@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Modelo de Documentação Markdown</title>
+<style>
+  @page {
+      size: A4;
+      margin: 20mm 15mm;
+      background-color: #f8f9fa;
+  }
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+  }
+  *, *::before, *::after {
+      box-sizing: border-box;
+  }
+  .header {
+      background-color: #27ae60;
+      color: #fff;
+      padding: 15px 20px;
+      margin: -20mm -15mm 20px -15mm;
+      text-align: center;
+  }
+  h1 {
+      font-size: 15pt;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+  h2 {
+      font-size: 13pt;
+      color: #2c3e50;
+      border-left: 5px solid #27ae60;
+      padding-left: 10px;
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      page-break-after: avoid;
+  }
+  p {
+      margin-bottom: 1em;
+      text-align: justify;
+  }
+  pre {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 10pt;
+      overflow-x: auto;
+      page-break-inside: avoid;
+  }
+  code {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #e9ecef;
+      padding: 2px 4px;
+      border-radius: 3px;
+      color: #c0392b;
+  }
+  ul {
+      margin-top: 0;
+      margin-bottom: 1em;
+      padding-left: 20px;
+  }
+  li {
+      margin-bottom: 0.5em;
+  }
+  .instruction {
+      font-style: italic;
+      color: #7f8c8d;
+      margin-bottom: 0.5em;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Modelo de Entregas do Primeiro Bimestre (.md)</h1>
+  <p style="margin:0; text-align:center; font-size: 10pt;">Linguagem e Técnicas de Programação</p>
+</div>
+
+<p>Este documento orienta a entrega da documentação inicial do projeto (valendo 3,0 pontos). Vocês devem utilizar um arquivo <code>.md</code> (Markdown) no repositório do GitHub (recomendamos nomeá-lo como <code>README.md</code> ou <code>DOCUMENTACAO.md</code>) para descrever o sistema a ser construído.</p>
+
+<p>Abaixo, apresentamos um modelo de como esse documento deve ser estruturado.</p>
+
+<hr style="border: 0; border-bottom: 1px solid #ccc; margin: 20px 0;">
+
+<h2 style="border:none; padding:0; text-align:center;">Título do Projeto: Sistema de Gerenciamento de Biblioteca Universitária</h2>
+
+<h2>1. Descrição do Sistema</h2>
+<p class="instruction">Apresente nesta seção uma breve descrição do sistema proposto.</p>
+<p><strong>Exemplo:</strong><br>
+O projeto consiste em um sistema de gerenciamento para uma biblioteca universitária desenvolvido em linguagem C. O sistema permitirá o controle do acervo de livros e o registro de empréstimos feitos pelos alunos. O programa utilizará arquivos binários para persistência de dados, garantindo que as informações de livros cadastrados e alunos não sejam perdidas ao fechar a aplicação.</p>
+<p>O foco principal é resolver a problemática de controle manual de empréstimos, automatizando a busca por livros disponíveis e registrando quem está com qual exemplar.</p>
+
+<h2>2. Fluxo de Utilização Esperado</h2>
+<p class="instruction">Descreva como o usuário interage com o programa.</p>
+<p><strong>Exemplo:</strong></p>
+<ul>
+    <li>Ao iniciar o programa, o usuário visualizará um menu principal com as opções: 1. Cadastrar Livro, 2. Cadastrar Aluno, 3. Realizar Empréstimo, 4. Devolver Livro, 5. Listar Disponíveis, 6. Sair.</li>
+    <li>Caso o usuário escolha <code>1</code>, o sistema solicitará Título, Autor, ISBN e Quantidade. Em seguida, salvará a <em>struct</em> no arquivo <code>livros.dat</code>.</li>
+    <li>Se escolher <code>3</code>, o sistema pedirá o RA do aluno e o ISBN do livro. O programa validará se o livro possui quantidade > 0 e, em caso positivo, registrará o empréstimo no arquivo <code>emprestimos.dat</code>, decrementando a quantidade no arquivo de livros.</li>
+    <li>As operações de erro (ex: livro não encontrado) exibirão mensagens claras e retornarão ao menu.</li>
+</ul>
+
+<h2>3. Fluxograma da Lógica do Sistema</h2>
+<p class="instruction">Insira a representação gráfica do funcionamento do seu código. Em Markdown, você pode inserir imagens da seguinte forma:</p>
+<pre>![Fluxograma Principal](link_para_a_imagem_no_seu_repositorio.png)</pre>
+<p class="instruction">(Vocês podem utilizar ferramentas gratuitas como Draw.io ou Lucidchart para desenhar o fluxograma, exportar como PNG e fazer o upload na pasta do projeto no GitHub).</p>
+
+<h2>4. Estrutura de Dados</h2>
+<p class="instruction">Apresente nesta parte a estrutura de dados (structs) do projeto. Mostre como os dados serão organizados na memória.</p>
+<p><strong>Exemplo:</strong><br>
+O sistema utilizará as seguintes estruturas heterogêneas para gerenciar as informações:</p>
+
+<pre>
+// Estrutura para armazenamento dos Livros
+typedef struct {
+    char isbn[20];
+    char titulo[100];
+    char autor[100];
+    int quantidade_disponivel;
+    int ativo; // 1 para ativo, 0 para removido
+} Livro;
+
+// Estrutura para armazenamento dos Alunos
+typedef struct {
+    int ra;
+    char nome[100];
+    char curso[50];
+} Aluno;
+
+// Estrutura para o controle de Empréstimos
+typedef struct {
+    int id_emprestimo;
+    int ra_aluno;
+    char isbn_livro[20];
+    char data_emprestimo[11];
+    int status; // 1 Emprestado, 0 Devolvido
+} Emprestimo;
+</pre>
+
+</body>
+</html>
