@@ -124,28 +124,28 @@
             <h1>Laboratório de Programação </h1>
             <p>Exercícios de Fixação: Linguagem C </p>
         </header>
-
-        <section class="question-card">
-            <div class="question-header">🏧 Exercício 05: Terminal Infinity Cash</div>
-            <h2>Introdução:</h2>
-            <div class="intro-box">
-                A lógica de um caixa eletrónico baseia-se em otimizar a entrega de cédulas, priorizando sempre as notas de maior valor disponível.
-            </div>
-            <h2>Comando:</h2>
-            <div class="comando">
-                Crie um simulador de saque que calcule a menor quantidade possível de notas para um valor total[cite: 2].
-                <ul>
-                    <li>Notas: R$ 100, R$ 50, R$ 10, R$ 5, R$ 2 e R$ 1.</li>
-                    <li>Exiba o resumo da contagem de cada nota entregue.</li>
-                </ul>
-            </div>
-            <h2>Descritivo de Apoio:</h2>
-            <div class="descritivo-apoio">
-                <strong>Técnica Matemática:</strong>
-                <br>Utilize a <strong>divisão inteira</strong> para contar as notas e o <strong>operador módulo (%)</strong> para calcular o resto que passa para a nota seguinte[cite: 2].
-                <br>Exemplo: R$ 168 = 1x100, 1x50, 1x10, 1x5, 1x2, 1x1.
-            </div>
-        </section>
+    <section class="question-card">
+                <div class="question-header">📉 Exercício 07: Simulador Salarial (INSS + IRRF)</div>
+                <h2>Introdução:</h2>
+                <div class="intro-box">
+                    O cálculo do salário líquido exige a aplicação sucessiva de tabelas de contribuição previdenciária e imposto de renda retido na fonte.
+                </div>
+                <h2>Comando:</h2>
+                <div class="comando">
+                    Crie um simulador que receba o Salário Bruto e calcule o Salário Líquido final.
+                    <ul>
+                        <li>Passo 1: Calcular desconto INSS (7.5% a 14%).</li>
+                        <li>Passo 2: Calcular IRRF sobre a base (Salário - INSS).</li>
+                    </ul>
+                </div>
+                <div class="item-destaque">
+                    <strong>Tabela IRRF:</strong> Até R$ 2.259,20 (Isento) | Até R$ 2.826,65 (7,5%) | Até R$ 3.751,05 (15%) | Acima (22,5%).
+                </div>
+                <h2>Descritivo de Apoio:</h2>
+                <div class="descritivo-apoio">
+                    <br>Fórmula IRRF: <code>(Base * Alíquota) - Dedução</code>.
+                </div>
+            </section>
 
         <section class="question-card">
             <div class="question-header">🚀 Exercício 06: Operação ENIAC - Trajetória</div>
@@ -158,14 +158,14 @@
                 Simule o alcance horizontal de um projétil com resistência do ar.
                 <ul>
                     <li>Entradas: Velocidade Inicial ($v_0$) e Ângulo ($\theta$).</li>
-                    <li>Saída: Alcance Máximo e Tempo de Voo[cite: 2].</li>
+                    <li>Saída: Alcance Máximo e Tempo de Voo.</li>
                 </ul>
             </div>
             <h2>Descritivo de Apoio:</h2>
             <div class="descritivo-apoio">
-                <strong>Constantes:</strong> $g = 9.8$ e atrito $k = 0.5$[cite: 2].
+                <strong>Constantes:</strong> $g = 9.8$ e atrito $k = 0.5$.
                 <br>• Converta o ângulo para radianos: <code>rad = graus * (PI / 180)</code>.
-                <br>• Use um <strong>Loop de Tempo</strong> que incremente 0.01s e pare quando $y(t) \le .
+                <br>• Use um <strong>Loop de Tempo</strong> que incremente 0.01s e pare quando $y(t) \le 0$.
             </div>
         </section>
 
@@ -179,8 +179,8 @@
             <div class="comando">
                 Crie um simulador que receba o Salário Bruto e calcule o Salário Líquido final.
                 <ul>
-                    <li>Passo 1: Calcular desconto INSS (7.5% a 14%)[cite: 2].</li>
-                    <li>Passo 2: Calcular IRRF sobre a base (Salário - INSS)[cite: 2].</li>
+                    <li>Passo 1: Calcular desconto INSS (7.5% a 14%).</li>
+                    <li>Passo 2: Calcular IRRF sobre a base (Salário - INSS).</li>
                 </ul>
             </div>
             <div class="item-destaque">
