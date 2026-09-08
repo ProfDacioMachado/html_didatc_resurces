@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade Prática: Lógica e Algoritmos</title>
+    <title>Atividade Prática: Lógica em C</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -38,19 +38,9 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        header h2 { 
-            margin: 0; 
-            font-size: 1.2em;
-            color: #bdc3c7;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            padding: 0;
-        }
-
         header h1 { 
-            margin: 10px 0; 
-            font-size: 2.5em; 
+            margin: 0 0 10px 0; 
+            font-size: 2.2em; 
             color: #fff;
         }
 
@@ -72,20 +62,8 @@
         }
 
         .orien-box-principal strong {
-            display: block;
             font-size: 1.2em;
-            margin-bottom: 10px;
             color: #533f03;
-        }
-
-        .orien-box {
-            background-color: #e8f4fd;
-            color: #0c5460;
-            padding: 15px;
-            border-radius: var(--border-radius);
-            border-left: 4px solid #117a8b;
-            font-size: 1.05em;
-            margin-bottom: 30px;
         }
 
         .question-card {
@@ -137,15 +115,14 @@
             font-size: 0.95em;
         }
 
-        .code-example {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+        .item-destaque {
+            background-color: #e8f8f5;
             padding: 15px;
+            margin: 15px 0;
             border-radius: 6px;
-            font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 0.9em;
-            white-space: pre-wrap;
-            margin-top: 15px;
+            font-size: 0.95em;
+            color: #117a65;
+            border-left: 4px solid #1abc9c;
         }
 
         code {
@@ -159,10 +136,6 @@
 
         ul { padding-left: 25px; }
         li { margin-bottom: 8px; }
-
-        .tag-blue { color: #2980b9; font-weight: bold; }
-        .tag-green { color: #27ae60; font-weight: bold; }
-        .tag-red { color: #c0392b; font-weight: bold; }
 
         footer {
             text-align: center;
@@ -178,210 +151,82 @@
 
     <div class="container">
         <header>
-            <h2>Lista de Atividades</h2>
-            <h1>FUNDAMENTOS DE PROGRAMAÇÃO</h1>
-            <p>Exercícios de Fixação: Lógica, Algoritmos e Fluxogramas</p>
+            <h1>Laboratório de Fundamentos de Programação</h1>
+            <p>Exercícios de Fixação: Lógica</p>
         </header>
 
         <div class="orien-box-principal">
-            <strong>⚠️ Orientações em Destaque:</strong>
+            <strong>Orientações:</strong><br><br>
             Executar a implementação do código fonte em linguagem C, com os conceitos apresentados em sala durante as aulas e com comentários do algoritmo implementado. A função <code>main</code> deve possuir a implementação essencial para a execução de todos os exercícios em respectiva ordem. Todos os exercícios devem ser implementados em um único código fonte.
         </div>
 
-        <div class="orien-box">
-            <strong>📋 Instrução Geral:</strong> Crie uma descrição, um fluxograma e um programa em linguagem C para cada um dos exercícios abaixo.
-        </div>
-
-        <!-- EXERCÍCIO 01 -->
         <section class="question-card">
-            <div class="question-header">⚡ Exercício 01: Validador de CPF</div>
-            
+            <div class="question-header">🏧 Exercício 05: Terminal Infinity Cash</div>
             <h2>Introdução:</h2>
             <div class="intro-box">
-                Validar documentos é uma tarefa comum em sistemas de cadastro. Um CPF não é apenas uma sequência de 11 números; ele possui uma lógica matemática baseada em dígitos verificadores para evitar erros de digitação e fraudes básicas.
+                A lógica de um caixa eletrônico baseia-se em otimizar a entrega de cédulas, priorizando sempre as notas de maior valor disponível.
             </div>
-
             <h2>Comando:</h2>
             <div class="comando">
-                Desenvolva um programa que receba um número de CPF e informe se ele é <strong>Válido</strong> ou <strong>Inválido</strong>.
+                Crie um simulador de saque que calcule a menor quantidade possível de notas para um valor total.
                 <ul>
-                    <li>Crie um campo de entrada para os números;</li>
-                    <li>Implemente a lógica de cálculo dos dois dígitos verificadores;</li>
-                    <li>Mostre o resultado final na tela.</li>
+                    <li>Notas: R$ 100, R$ 50, R$ 10, R$ 5, R$ 2 e R$ 1.</li>
+                    <li>Exiba o resumo da contagem de cada nota entregue.</li>
                 </ul>
             </div>
-
             <h2>Descritivo de Apoio:</h2>
             <div class="descritivo-apoio">
-                <strong>Algoritmo de Validação:</strong>
-                <ul>
-                    <li><strong>1º dígito:</strong> Multiplique os 9 primeiros números por uma contagem regressiva de 10 a 2. Some tudo, multiplique por 10 e pegue o resto da divisão por 11.</li>
-                    <li><strong>2º dígito:</strong> Repita o processo com os 10 primeiros números, usando pesos de 11 a 2.</li>
-                    <li><em>Dica: Se o resto da conta for 10, considere o dígito como 0.</em></li>
-                </ul>
+                <strong>Técnica Matemática:</strong>
+                <br>Utilize a <strong>divisão inteira</strong> para contar as notas e o <strong>operador módulo (%)</strong> para calcular o resto que passa para a nota seguinte.
+                <br>Exemplo: R$ 168 = 1x100, 1x50, 1x10, 1x5, 1x2, 1x1.
             </div>
         </section>
 
-        <!-- EXERCÍCIO 02 -->
         <section class="question-card">
-            <div class="question-header">🌡️ Exercício 02: Conversor Dinâmico</div>
-            
+            <div class="question-header">🚀 Exercício 06: Operação ENIAC - Trajetória</div>
             <h2>Introdução:</h2>
             <div class="intro-box">
-                Cálculos de temperatura são essenciais em diversas áreas da ciência e engenharia. A conversão precisa entre diferentes escalas garante a exatidão dos dados em projetos e medições.
+                Os computadores modernos nasceram da necessidade de calcular trajetórias balísticas complexas que consideram a resistência do ar.
             </div>
-
             <h2>Comando:</h2>
             <div class="comando">
-                Crie um conversor de temperatura entre Celsius (C) e Fahrenheit (F), que verifique qual é a grandeza de entrada e realize a conversão correta.
+                Simule o alcance horizontal de um projétil com resistência do ar.
                 <ul>
-                    <li>Solicite uma temperatura de entrada e identifique a grandeza;</li>
-                    <li>Com uma entrada em Celsius, deve-se calcular o valor em Fahrenheit;</li>
-                    <li>Com uma entrada em Fahrenheit, deve-se calcular o valor em Celsius;</li>
-                    <li>Mostre na tela o resultado da conversão.</li>
+                    <li>Entradas: Velocidade Inicial (v0) e Ângulo (θ).</li>
+                    <li>Saída: Alcance Máximo e Tempo de Voo.</li>
                 </ul>
             </div>
-
             <h2>Descritivo de Apoio:</h2>
             <div class="descritivo-apoio">
-                <strong>Fórmulas Matemáticas:</strong>
-                <br>• De Celsius para Fahrenheit: <code>F = (C * 9/5) + 32</code>
-                <br>• De Fahrenheit para Celsius: <code>C = (F - 32) * 5/9</code>
+                <strong>Constantes:</strong> Gravidade <code>g = 9.8</code> e atrito <code>k = 0.5</code>.
+                <br>• Converta o ângulo para radianos: <code>rad = graus * (PI / 180)</code>.
+                <br>• Use um <strong>Loop de Tempo</strong> que incremente 0.01s e pare quando a altura <code>y(t) &le; 0</code>.
             </div>
         </section>
 
-        <!-- EXERCÍCIO 03 -->
         <section class="question-card">
-            <div class="question-header">🎓 Exercício 03: Média Escolar</div>
-            
+            <div class="question-header">📉 Exercício 07: Simulador Salarial (INSS + IRRF)</div>
             <h2>Introdução:</h2>
             <div class="intro-box">
-                Sistemas acadêmicos utilizam estruturas condicionais para decidir o fluxo do aluno. Além do cálculo aritmético, o sistema deve interpretar o resultado e fornecer um feedback visual e textual adequado.
+                O cálculo do salário líquido exige a aplicação sucessiva de tabelas de contribuição previdenciária e imposto de renda retido na fonte.
             </div>
-
             <h2>Comando:</h2>
             <div class="comando">
-                Construa um programa que receba o nome de um aluno e três notas, calculando a média e a situação final.
+                Crie um simulador que receba o Salário Bruto e calcule o Salário Líquido final.
                 <ul>
-                    <li>Solicite 3 notas de entrada;</li>
-                    <li>Calcule a média e verifique o critério de aprovação;</li>
-                    <li>Mostre o resultado final formatado.</li>
+                    <li>Passo 1: Calcular desconto INSS (7.5% a 14%).</li>
+                    <li>Passo 2: Calcular IRRF sobre a base (Salário - INSS).</li>
                 </ul>
             </div>
-
+            <div class="item-destaque">
+                <strong>Tabela IRRF:</strong> Até R$ 2.259,20 (Isento) | Até R$ 2.826,65 (7,5%) | Até R$ 3.751,05 (15%) | Acima (22,5%).
+            </div>
             <h2>Descritivo de Apoio:</h2>
             <div class="descritivo-apoio">
-                <strong>Critérios de Avaliação:</strong>
-                <ul>
-                    <li><span class="tag-blue">Aprovado:</span> Média entre 7.0 e 10.0 (Exibir mensagem azul);</li>
-                    <li><span class="tag-green">Exame:</span> Média entre 4.0 e 6.9 (Exibir mensagem verde + cálculo de quanto falta para atingir 10);</li>
-                    <li><span class="tag-red">Reprovado:</span> Média abaixo de 4.0 (Exibir mensagem vermelha).</li>
-                </ul>
+                Fórmula IRRF: <code>(Base * Alíquota) - Dedução</code>.
             </div>
         </section>
-
-        <!-- EXERCÍCIO 04 -->
-        <section class="question-card">
-            <div class="question-header">💼 Exercício 04: Cálculo de INSS</div>
-            
-            <h2>Introdução:</h2>
-            <div class="intro-box">
-                O Instituto Nacional do Seguro Social (INSS) arrecada contribuições com base em alíquotas progressivas. Criar funções modulares para cálculos tributários facilita a manutenção de sistemas de folha de pagamento.
-            </div>
-
-            <h2>Comando:</h2>
-            <div class="comando">
-                Crie uma <strong>função em C</strong> que realize <em>exclusivamente</em> o cálculo do INSS.
-                <ul>
-                    <li>A função deve receber o salário bruto como parâmetro;</li>
-                    <li>A função deve retornar o valor do desconto do INSS;</li>
-                    <li>Não faça a impressão de dados dentro da função.</li>
-                </ul>
-            </div>
-
-            <h2>Descritivo de Apoio:</h2>
-            <div class="descritivo-apoio">
-                <strong>Tabela Simplificada INSS:</strong>
-                <ul>
-                    <li>Até R$ 1.412,00: <strong>7,5%</strong></li>
-                    <li>De R$ 1.412,01 até R$ 2.666,68: <strong>9%</strong></li>
-                    <li>De R$ 2.666,69 até R$ 4.000,03: <strong>12%</strong></li>
-                    <li>Acima de R$ 4.000,04: <strong>14%</strong> (Limitado ao teto)</li>
-                </ul>
-                <em>Nota: Para fins didáticos, você pode aplicar o percentual diretamente sobre o valor total bruto da faixa, sem necessidade da parcela a deduzir.</em>
-            </div>
-        </section>
-
-        <!-- EXERCÍCIO 05 -->
-        <section class="question-card">
-            <div class="question-header">🏦 Exercício 05: Cálculo de IRPF</div>
-            
-            <h2>Introdução:</h2>
-            <div class="intro-box">
-                O Imposto de Renda Retido na Fonte (IRPF) é calculado sobre o salário base, que consiste no salário bruto subtraído do desconto do INSS. 
-            </div>
-
-            <h2>Comando:</h2>
-            <div class="comando">
-                Crie uma <strong>função em C</strong> que realize <em>exclusivamente</em> o cálculo do IRPF.
-                <ul>
-                    <li>A função deve receber o salário-base (Bruto - INSS) como parâmetro;</li>
-                    <li>A função deve retornar o valor do imposto retido;</li>
-                    <li>Assim como no INSS, retorne apenas o valor, sem <code>printf</code> na função.</li>
-                </ul>
-            </div>
-
-            <h2>Descritivo de Apoio:</h2>
-            <div class="descritivo-apoio">
-                <strong>Tabela Simplificada IRPF:</strong>
-                <ul>
-                    <li>Até R$ 2.259,20: <strong>Isento</strong></li>
-                    <li>De R$ 2.259,21 até R$ 2.826,65: <strong>7,5%</strong> (Dedução: R$ 169,44)</li>
-                    <li>De R$ 2.826,66 até R$ 3.751,05: <strong>15%</strong> (Dedução: R$ 381,44)</li>
-                    <li>De R$ 3.751,06 até R$ 4.664,68: <strong>22,5%</strong> (Dedução: R$ 662,77)</li>
-                    <li>Acima de R$ 4.664,68: <strong>27,5%</strong> (Dedução: R$ 896,00)</li>
-                </ul>
-                <em>Fórmula: <code>(Salário Base * Alíquota) - Dedução</code></em>
-            </div>
-        </section>
-
-        <!-- EXERCÍCIO 06 -->
-        <section class="question-card">
-            <div class="question-header">📄 Exercício 06: Emissão de Contra-cheque</div>
-            
-            <h2>Introdução:</h2>
-            <div class="intro-box">
-                O contra-cheque (holerite) é o documento que demonstra os recebimentos e descontos do trabalhador. A consolidação dos cálculos em um documento formatado é a entrega final do processamento da folha.
-            </div>
-
-            <h2>Comando:</h2>
-            <div class="comando">
-                Desenvolva a lógica principal que utilize as funções criadas nos exercícios anteriores para processar uma folha de pagamento e imprimir o contra-cheque.
-                <ul>
-                    <li>Solicite o <strong>valor da hora</strong> trabalhada e a <strong>quantidade de horas</strong> no mês;</li>
-                    <li>Calcule o Salário Bruto (Horas * Valor);</li>
-                    <li>Chame a função do Exercício 4 para obter o INSS;</li>
-                    <li>Chame a função do Exercício 5 para obter o IRPF;</li>
-                    <li>Calcule o Salário Líquido;</li>
-                    <li>Imprima o resultado formatado no padrão ABNT de relatórios corporativos.</li>
-                </ul>
-            </div>
-
-            <h2>Descritivo de Apoio:</h2>
-            <div class="descritivo-apoio">
-                <strong>Exemplo de formatação esperada (Saída do Console):</strong>
-                <div class="code-example">======================================================
-    RECIBO DE PAGAMENTO DE SALÁRIO (CONTRA-CHEQUE)
-======================================================
- Salário Bruto (Horas x Valor):   R$ 5.000,00
- (-) Desconto INSS:               R$   700,00
- (-) Desconto IRPF:               R$   301,06
-------------------------------------------------------
- LÍQUIDO A RECEBER:               R$ 3.998,94
-======================================================</div>
-            </div>
-        </section>
-
+        
         <footer>
             Atividade Prática - Desenvolvido com ❤️ by Dacio Machado
         </footer>
