@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática: C </title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22; /* Cor diferente da prova para diferenciar */
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 2em; }
+        header p { margin: 10px 0 0; opacity: 0.9; }
+
+        .question-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .question-header {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-top: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .intro-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ccd1d1;
+            font-size: 0.95em;
+        }
+
+        .descritivo-apoio {
+            background-color: #fffaf0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px dashed #f39c12;
+            font-size: 0.9em;
+        }
+
+        .comando {
+            font-weight: 500;
+        }
+
+        .item-destaque {
+            background-color: #e8f8f5;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #117a65;
+            border-left: 4px solid #1abc9c;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            color: #c7254e;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Laboratório de Programação </h1>
+            <p>Exercícios de Fixação: Linguagem C </p>
+        </header>
+
+        <section class="question-card">
+            <div class="question-header">🏧 Exercício 05: Terminal Infinity Cash</div>
+            <h2>Introdução:</h2>
+            <div class="intro-box">
+                A lógica de um caixa eletrónico baseia-se em otimizar a entrega de cédulas, priorizando sempre as notas de maior valor disponível.
+            </div>
+            <h2>Comando:</h2>
+            <div class="comando">
+                Crie um simulador de saque que calcule a menor quantidade possível de notas para um valor total[cite: 2].
+                <ul>
+                    <li>Notas: R$ 100, R$ 50, R$ 10, R$ 5, R$ 2 e R$ 1.</li>
+                    <li>Exiba o resumo da contagem de cada nota entregue.</li>
+                </ul>
+            </div>
+            <h2>Descritivo de Apoio:</h2>
+            <div class="descritivo-apoio">
+                <strong>Técnica Matemática:</strong>
+                <br>Utilize a <strong>divisão inteira</strong> para contar as notas e o <strong>operador módulo (%)</strong> para calcular o resto que passa para a nota seguinte[cite: 2].
+                <br>Exemplo: R$ 168 = 1x100, 1x50, 1x10, 1x5, 1x2, 1x1.
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="question-header">🚀 Exercício 06: Operação ENIAC - Trajetória</div>
+            <h2>Introdução:</h2>
+            <div class="intro-box">
+                Os computadores modernos nasceram da necessidade de calcular trajetórias balísticas complexas que consideram a resistência do ar.
+            </div>
+            <h2>Comando:</h2>
+            <div class="comando">
+                Simule o alcance horizontal de um projétil com resistência do ar.
+                <ul>
+                    <li>Entradas: Velocidade Inicial ($v_0$) e Ângulo ($\theta$).</li>
+                    <li>Saída: Alcance Máximo e Tempo de Voo[cite: 2].</li>
+                </ul>
+            </div>
+            <h2>Descritivo de Apoio:</h2>
+            <div class="descritivo-apoio">
+                <strong>Constantes:</strong> $g = 9.8$ e atrito $k = 0.5$[cite: 2].
+                <br>• Converta o ângulo para radianos: <code>rad = graus * (PI / 180)</code>.
+                <br>• Use um <strong>Loop de Tempo</strong> que incremente 0.01s e pare quando $y(t) \le .
+            </div>
+        </section>
+
+        <section class="question-card">
+            <div class="question-header">📉 Exercício 07: Simulador Salarial (INSS + IRRF)</div>
+            <h2>Introdução:</h2>
+            <div class="intro-box">
+                O cálculo do salário líquido exige a aplicação sucessiva de tabelas de contribuição previdenciária e imposto de renda retido na fonte.
+            </div>
+            <h2>Comando:</h2>
+            <div class="comando">
+                Crie um simulador que receba o Salário Bruto e calcule o Salário Líquido final.
+                <ul>
+                    <li>Passo 1: Calcular desconto INSS (7.5% a 14%)[cite: 2].</li>
+                    <li>Passo 2: Calcular IRRF sobre a base (Salário - INSS)[cite: 2].</li>
+                </ul>
+            </div>
+            <div class="item-destaque">
+                <strong>Tabela IRRF:</strong> Até R$ 2.259,20 (Isento) | Até R$ 2.826,65 (7,5%) | Até R$ 3.751,05 (15%) | Acima (22,5%).
+            </div>
+            <h2>Descritivo de Apoio:</h2>
+            <div class="descritivo-apoio">
+                <br>Fórmula IRRF: <code>(Base * Alíquota) - Dedução</code>.
+            </div>
+        </section>
+        
+        <footer>
+            Atividade Prática  - Desenvolvido com ❤️ by Dacio Machado 
+        </footer>
+    </div>
+
+</body>
+</html>
